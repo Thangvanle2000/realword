@@ -9,6 +9,7 @@ class CreateFollowersPivotTable extends Migration
     public function up()
     {
         Schema::create('followers', function (Blueprint $table) {
+          $table->id();
             $table->foreignId('follower_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('following_id')->constrained('users')->onDelete('cascade');
 
